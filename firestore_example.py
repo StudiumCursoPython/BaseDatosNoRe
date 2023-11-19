@@ -3,7 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 # Usar el archivo json descargado
-cred = credentials.Certificate(r'C:/Users/clja1/Downloads/alpine-charge-403816-508bb90d3f34.json')
+cred = credentials.Certificate(r'alpine-charge-403816-508bb90d3f34.json')
 firebase_admin.initialize_app(cred)
 
 # Inicializa la instancia de Firestore
@@ -13,7 +13,7 @@ db = firestore.client()
 def add_data(collection_id, document_id, data):
     db.collection(collection_id).document(document_id).set(data)
 
-#Función para agregar un documento con ID generado automáticamente
+#Función para agregar un documento con ID (document_id) generado automáticamente
 def add_data_auto_id(collection_id, data):
     doc_ref = db.collection(collection_id).add(data)
     return doc_ref
@@ -41,9 +41,9 @@ def get_data(collection_id, document_id):
 # Ejemplo de uso para agregar datos
 '''
 data = {
-    'name': 'Martin Marin',
-    'age': 20,
-    'email': 'martinmarin@example.com'
+    'nombre': 'Martin Marin',
+    'edad': 20,
+    'correo': 'martinmarin@example.com'
 }
 
 add_data_auto_id('profesor', data)
@@ -68,5 +68,6 @@ for user in todos_users:
 
 user_data = get_data('users', 'user_2')
 alumnos_data = get_data('alumnos','1UcwfQA0QPZhbsPnRnNA')
+profesores_data = get_data('profesor','6AfENRpVmw3INEANdMvf')
 
-print(user_data,alumnos_data)
+print(user_data, alumnos_data, profesores_data)
