@@ -4,7 +4,6 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from tkinter import messagebox
 
-
 # Configuración inicial de Firebase
 cred = credentials.Certificate(r'alpine-charge-403816-508bb90d3f34.json')
 firebase_admin.initialize_app(cred)
@@ -34,7 +33,7 @@ def agregar_alumno():
         }
 
         # Llamar a la función para agregar a Firestore
-        doc_ref = add_data_auto_id('alumnos', alumno_data)
+        add_data_auto_id('alumnos', alumno_data)
 
         # Mostrar mensaje de éxito
         messagebox.showinfo("Éxito", f"Alumno agregado")  # falla al coger la id  -- con ID: {doc_ref.id}")
@@ -49,7 +48,8 @@ def agregar_alumno():
 
 # Configuración de la ventana principal de Tkinter
 root = tk.Tk()
-root.title("Agregar Alumno")
+root.title("Alta Alumno")
+root.geometry("270x170")
 
 # Crear campos de entrada y etiquetas
 label_nombre = tk.Label(root, text="Nombre:")
