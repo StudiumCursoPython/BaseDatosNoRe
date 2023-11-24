@@ -5,8 +5,6 @@ from firebase_admin import firestore
 from tkinter import messagebox
 
 
-# Asegúrate de que la inicialización de Firebase y las funciones estén definidas aquí
-
 # Configuración inicial de Firebase
 cred = credentials.Certificate(r'alpine-charge-403816-508bb90d3f34.json')
 firebase_admin.initialize_app(cred)
