@@ -42,7 +42,7 @@ def actualizar_datos():
         # Inserta la información del alumno en la lista
         lista_alumnos.insert(tk.END, f"{id_alumno}: {nombre_alumno}")
 
-
+# No me gusta esto, hay que hacerlo con id automática
 def agregar_alumno():
     nuevo_id = entrada_id.get()
     nuevo_nombre = entrada_nombre.get()

@@ -13,7 +13,7 @@ db = firestore.client()
 def add_data(collection_id, document_id, data):
     db.collection(collection_id).document(document_id).set(data)
 
-#Función para agregar un documento con ID (document_id) generado automáticamente
+#Función para agregar un documento con ID (document_id) generado automáticamente, mejores prácticas
 def add_data_auto_id(collection_id, data):
     doc_ref = db.collection(collection_id).add(data)
     return doc_ref
@@ -41,9 +41,10 @@ def get_data(collection_id, document_id):
 # Ejemplo de uso para agregar datos
 '''
 data = {
-    'nombre': 'Martin Marin',
-    'edad': 20,
-    'correo': 'martinmarin@example.com'
+    'nombre': 'Fernado Gutierrez',
+    'edad': 34,
+    'correo': 'fguti@example.com',
+    'ciudad': 'Palma'
 }
 
 add_data_auto_id('profesor', data)
