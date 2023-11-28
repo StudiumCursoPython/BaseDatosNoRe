@@ -4,7 +4,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # Configuración inicial de Firebase
-cred = credentials.Certificate(r'C:/Users/clja1/Downloads/alpine-charge-403816-508bb90d3f34.json')
+cred = credentials.Certificate(r'C:/Users/pepe/Downloads/alpine-charge-403816-508bb90d3f34.json')
 firebase_admin.initialize_app(cred)
 
 # Inicializar la instancia de Firestore
