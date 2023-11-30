@@ -1,10 +1,3 @@
-"""
-Curso Python empresa
-
-Autor: José Antonio Calvo López
-Fecha: Noviembre de 2023
-"""
-
 from firebase_admin import credentials
 from firebase_admin import firestore
 import firebase_admin
