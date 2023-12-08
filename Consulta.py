@@ -22,7 +22,7 @@ def coger_todos_datos(collection_id):
 
 # Todos los alumnos
 todos_alumnos = coger_todos_datos('alumnos')
-#Todos los users
+#Todos los profesores
 datos_profesor = coger_todos_datos('profesor')
 print(" ---- Alumnos ---- ")
 for alumno in todos_alumnos:
