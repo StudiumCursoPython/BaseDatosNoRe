@@ -9,11 +9,11 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 ''' # Función para agregar datos en el caso que no se quiera generar la id automáticamente, no recomendable
-def add_data(collection_id, document_id, data):
+def agre_datos(collection_id, document_id, data):
     db.collection(collection_id).document(document_id).set(data)
 '''
 #Función para agregar un documento con ID (document_id) generado automáticamente, mejores prácticas
-def add_data_auto_id(collection_id, data):
+def agre_datos_auto_id(collection_id, data):
     doc_ref = db.collection(collection_id).add(data)
     return doc_ref
 
@@ -26,7 +26,7 @@ data = {
     'ciudad': 'Palma'
 }
 
-add_data_auto_id('profesor', data)
+agre_datos_auto_id('profesor', data)
 
 
 # Ejemplo de uso para agregar datos de la colección alumnos
@@ -38,4 +38,4 @@ data = {
     'ciudad': 'Tenerife'
 }
 
-add_data_auto_id('alumnos', data)
+agre_datos_auto_id('alumnos', data)

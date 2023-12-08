@@ -10,7 +10,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 #Funcion para obtener todos los datos de una colección
-def get_all_data(collection_id):
+def coger_todos_datos(collection_id):
     documents = db.collection(collection_id).stream()
     data = []
     for doc in documents:
@@ -21,12 +21,13 @@ def get_all_data(collection_id):
     return data
 
 # Todos los alumnos
-todos_alumnos = get_all_data('alumnos')
+todos_alumnos = coger_todos_datos('alumnos')
 #Todos los users
-datos_profesor = get_all_data('profesor')
+datos_profesor = coger_todos_datos('profesor')
 print(" ---- Alumnos ---- ")
 for alumno in todos_alumnos:
     print(alumno)
 print(" ---- Profesores ---- ")
 for profesor in datos_profesor:
     print(profesor)
+
