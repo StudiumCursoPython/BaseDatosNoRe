@@ -74,6 +74,9 @@ def eliminar_documento():
 # Crear la ventana principal
 root = tk.Tk()
 root.title("Modificar-Eliminar Documentos Firestore")
+#centrado aproximado de la ventana
+root.eval('tk::PlaceWindow . center')
+root.resizable(False, False)
 
 # Crear y configurar elementos de la GUI
 frame_botones = tk.Frame(root)
@@ -92,9 +95,11 @@ lista_identificadores.bind("<<ListboxSelect>>", cargar_datos_seleccionados)
 
 campos_entrada = {}  # Diccionario para almacenar los campos de entrada
 
-# Ejemplo de campos de entrada para modificar datos
-campos_modificar = ["nombre", "edad"]
+# Campos de entrada para modificar datos
+campos_modificar = ["nombre", "edad", "correo"]
 
+
+# Construye los Labels y las entradas en funcion a campos_modificar
 for campo in campos_modificar:
     label = tk.Label(root, text=f"{campo.capitalize()}:")
     label.pack()
@@ -111,7 +116,7 @@ boton_actualizar = tk.Button(frame_otros_botones, text="Eliminar", command=elimi
 boton_actualizar.pack(side=tk.LEFT)
 
 # Ejecutar la aplicación
-root.geometry("400x400")
+root.geometry("400x500")
 root.mainloop()
 
 
