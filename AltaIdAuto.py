@@ -1,5 +1,5 @@
-import firebase_admin
 from firebase_admin import credentials, firestore
+import firebase_admin
 
 # Usar el archivo json descargado
 cred = credentials.Certificate(r'alpine-charge-403816-508bb90d3f34.json')
