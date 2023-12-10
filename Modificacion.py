@@ -8,21 +8,36 @@ initialize_app(cred)
 db = firestore.client()
 
 # Ejemplo de datos para actualizar
-id_alumno_a_actualizar = 'id_del_alumno'
+id_alumno_a_actualizar = input ('id_del_alumno: ')
+
+nombre_alumno = input('nombre: ')
+edad_alumno = input('edad: ')
+correo_alumno = input('email: ')
+
 datos_actualizados_alumno = {
-    "edad": 21,
-    "curso": "Física"
+    "nombre": nombre_alumno,
+    "edad": edad_alumno,
+    "correo": correo_alumno
 }
 
-id_profesor_a_actualizar = 'id_del_profesor'
+id_profesor_a_actualizar = input ('id_del_profesor: ')
+
+nombre_profe = input('nombre: ')
+edad_profe = input('edad: ')
+correo_profe = input('email: ')
+
+
 datos_actualizados_profesor = {
-    "departamento": "Historia"
+    "nombre": nombre_profe,
+    "edad": edad_profe,
+    "correo": correo_profe
 }
+
 
 # Actualizar datos en la colección 'alumnos'
 db.collection('alumnos').document(id_alumno_a_actualizar).update(datos_actualizados_alumno)
 
 # Actualizar datos en la colección 'profesores'
-db.collection('profesores').document(id_profesor_a_actualizar).update(datos_actualizados_profesor)
+db.collection('profesor').document(id_profesor_a_actualizar).update(datos_actualizados_profesor)
 
 print("Datos actualizados con éxito")

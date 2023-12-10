@@ -8,7 +8,7 @@ firebase_admin.initialize_app(cred)
 # Inicializa la instancia de Firestore
 db = firestore.client()
 
-''' # Función para agregar datos en el caso que no se quiera generar la id automáticamente, no recomendable
+''' # Función para agregar datos en el caso que no se quiera generar la id automáticamente, no recomendable, no mantiene las buenas practicas de las BBDD relacionales
 def agre_datos(collection_id, document_id, data):
     db.collection(collection_id).document(document_id).set(data)
 '''

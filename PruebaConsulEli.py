@@ -1,5 +1,5 @@
-import tkinter as tk
-from tkinter import messagebox, Entry, Listbox
+import tkinter as tk, os, sys
+from tkinter import messagebox, Entry, Listbox, PhotoImage, Label
 from firebase_admin import credentials, firestore, initialize_app
 
 # Inicializar la aplicación Firebase con las credenciales
@@ -78,6 +78,12 @@ root.title("Modificar-Eliminar Documentos Firestore")
 root.eval('tk::PlaceWindow . center')
 root.resizable(False, False)
 
+# Obtener la ruta de acceso a los recursos incluidos en el archivo
+ruta_recursos = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+
+# Cargar las imágenes
+icono = PhotoImage(file=os.path.join(ruta_recursos, "Studium.png"))
+
 # Crear y configurar elementos de la GUI
 frame_botones = tk.Frame(root)
 frame_botones.pack()
@@ -107,8 +113,12 @@ for campo in campos_modificar:
     entrada.pack()
     campos_entrada[campo] = entrada
 
+label_separador = Label(root, text= "------")
+label_separador.pack()
+
 frame_otros_botones = tk.Frame(root)
 frame_otros_botones.pack()
+
 boton_actualizar = tk.Button(frame_otros_botones, text="Actualizar", command=actualizar_documento)
 boton_actualizar.pack(side=tk.LEFT)
 
@@ -116,7 +126,8 @@ boton_actualizar = tk.Button(frame_otros_botones, text="Eliminar", command=elimi
 boton_actualizar.pack(side=tk.LEFT)
 
 # Ejecutar la aplicación
-root.geometry("400x500")
+root.geometry("400x450")
+root.iconphoto(True, icono)
 root.mainloop()
 
 
