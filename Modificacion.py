@@ -26,13 +26,11 @@ nombre_profe = input('nombre: ')
 edad_profe = input('edad: ')
 correo_profe = input('email: ')
 
-
 datos_actualizados_profesor = {
     "nombre": nombre_profe,
     "edad": edad_profe,
     "correo": correo_profe
 }
-
 
 # Actualizar datos en la colección 'alumnos'
 db.collection('alumnos').document(id_alumno_a_actualizar).update(datos_actualizados_alumno)
