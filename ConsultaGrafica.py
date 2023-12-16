@@ -25,13 +25,13 @@ def get_all_data(collection_id):
     return data
 
 def mostrar_alumnos():
-    texto.delete('1.0', tk.END)
+    borrar_datos()
     todos_alumnos = get_all_data('alumnos')
     for alumno in todos_alumnos:
         texto.insert(tk.END, f"{alumno}\n\n")
 
 def mostrar_profesores():
-    texto.delete('1.0', tk.END)
+    borrar_datos()
     datos_profesor = get_all_data('profesor')
     for profesor in datos_profesor:
         texto.insert(tk.END, f"{profesor}\n\n")
