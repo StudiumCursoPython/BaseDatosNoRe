@@ -63,8 +63,8 @@ boton_profesores.pack()
 texto = tk.Text(ventana)
 texto.pack()
 
-boton_profesores = ttk.Button(ventana, text="Borrar", command=borrar_datos)
-boton_profesores.pack()
+boton_borrar = ttk.Button(ventana, text="Borrar", command=borrar_datos)
+boton_borrar.pack()
 
 # Ejecutar la ventana
 ventana.iconphoto(True, icono)

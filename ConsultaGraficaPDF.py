@@ -1,6 +1,7 @@
 from firebase_admin import credentials, firestore
 from tkinter import ttk, PhotoImage
 from fpdf import FPDF
+import docx
 import firebase_admin
 import tkinter as tk
 import sys, os
@@ -46,15 +47,23 @@ def generar_pdf():
     for dato in datos:
         pdf.cell(200, 10, txt=dato, ln=True, align='C')
 
-    pdf.output("documento.pdf")
+    pdf.output("documentoPDF.pdf")
 
+def generar_word():
+    datos = texto.get("1.0", tk.END).splitlines()
+    doc = docx.Document()
+
+    for dato in datos:
+        doc.add_paragraph(dato)
+
+    doc.save("documentoDocx.docx")
 
 def borrar_datos():
     texto.delete('1.0', tk.END)
 
 # Crear la ventana principal
 ventana = tk.Tk()
-ventana.geometry("650x500")
+ventana.geometry("650x540")
 ventana.title("Información A y P")
 
 ventana.eval('tk::PlaceWindow . center')
@@ -77,11 +86,18 @@ boton_profesores.pack()
 texto = tk.Text(ventana)
 texto.pack()
 
-boton_profesores = ttk.Button(ventana, text="Borrar", command=borrar_datos)
-boton_profesores.pack()
+boton_borrar = ttk.Button(ventana, text="Borrar", command=borrar_datos)
+boton_borrar.pack()
+
+
+separacion = ttk.Label(ventana, text="Utilidades")
+separacion.pack()
 
 boton_pdf = ttk.Button(ventana, text="Generar PDF", command=generar_pdf)
 boton_pdf.pack()
+
+boton_word = ttk.Button(ventana, text="Generar Word", command=generar_word)
+boton_word.pack()
 
 # Ejecutar la ventana
 ventana.iconphoto(True, icono)
