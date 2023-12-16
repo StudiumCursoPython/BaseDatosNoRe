@@ -1,5 +1,6 @@
 from firebase_admin import credentials, firestore
 from tkinter import ttk, PhotoImage
+from fpdf import FPDF
 import firebase_admin
 import tkinter as tk
 import sys, os
@@ -35,12 +36,25 @@ def mostrar_profesores():
     for profesor in datos_profesor:
         texto.insert(tk.END, f"{profesor}\n\n")
 
+def generar_pdf():
+    # Extrae las líneas de texto del widget
+    datos = texto.get("1.0", tk.END).splitlines()
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+
+    for dato in datos:
+        pdf.cell(200, 10, txt=dato, ln=True, align='C')
+
+    pdf.output("documento.pdf")
+
+
 def borrar_datos():
     texto.delete('1.0', tk.END)
 
 # Crear la ventana principal
 ventana = tk.Tk()
-ventana.geometry("650x470")
+ventana.geometry("650x500")
 ventana.title("Información A y P")
 
 ventana.eval('tk::PlaceWindow . center')
@@ -65,6 +79,9 @@ texto.pack()
 
 boton_profesores = ttk.Button(ventana, text="Borrar", command=borrar_datos)
 boton_profesores.pack()
+
+boton_pdf = ttk.Button(ventana, text="Generar PDF", command=generar_pdf)
+boton_pdf.pack()
 
 # Ejecutar la ventana
 ventana.iconphoto(True, icono)

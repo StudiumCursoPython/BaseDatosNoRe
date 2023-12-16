@@ -31,3 +31,5 @@ print(" ---- Profesores ---- ")
 for profesor in datos_profesor:
     print(profesor)
 
+
+# Pasar a pdf la consulta, ejercicio propuesto
