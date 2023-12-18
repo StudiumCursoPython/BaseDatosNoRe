@@ -20,10 +20,10 @@ def agre_datos_auto_id(collection_id, data):
 # Ejemplo de uso para agregar datos para la colección profesor
 
 data = {
-    'nombre': 'Fernado Gutierrez',
-    'edad': 34,
-    'correo': 'fguti@example.com',
-    'ciudad': 'Palma'
+    'nombre': 'Nando Guti',
+    'edad': 94,
+    'correo': 'mguti@example.com',
+    'ciudad': 'La Palma'
 }
 
 agre_datos_auto_id('profesor', data)
@@ -32,10 +32,10 @@ agre_datos_auto_id('profesor', data)
 # Ejemplo de uso para agregar datos de la colección alumnos
 
 data = {
-    'nombre': 'Francisco López',
-    'edad': 36,
-    'correo': 'flop@example.com',
-    'ciudad': 'Tenerife'
+    'nombre': 'Francisco Pi',
+    'edad': 56,
+    'correo': 'flopi@example.com',
+    'ciudad': 'Sevilla'
 }
 
 agre_datos_auto_id('alumnos', data)

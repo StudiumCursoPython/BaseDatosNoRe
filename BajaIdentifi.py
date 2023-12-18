@@ -26,7 +26,7 @@ try:
 
     # Intentar eliminar el documento en ambas colecciones
     eliminar_documento(db.collection('alumnos'), identificador)
-    eliminar_documento(db.collection('profesores'), identificador)
+    eliminar_documento(db.collection('profesor'), identificador)
 
 except Exception as e:
     print(f'Ocurrió un error al procesar la entrada: {e}')

@@ -19,7 +19,7 @@ def verificar_conexion(db):
 
 try:
     # Autenticación con el archivo json
-    credencial = credentials.Certificate('alpine-charge-403816-508bb90d3f34.json')
+    credencial = credentials.Certificate(r'alpine-charge-403816-508bb90d3f34.json')
     firebase_admin.initialize_app(credencial)
 
     # Inicializa la instancia de Firestore
