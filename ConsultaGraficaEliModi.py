@@ -18,7 +18,7 @@ def mostrar_identificadores(coleccion):
         lista_identificadores.insert(tk.END, identificador)
 
 # Función para actualizar la colección actual y mostrar identificadores
-def actualizar_coleccion_y_mostrar_identificadores(coleccion):
+def actualizar_mostrar_identificadores(coleccion):
     global coleccion_actual
     coleccion_actual = coleccion
     mostrar_identificadores(coleccion)
@@ -88,10 +88,10 @@ icono = PhotoImage(file=os.path.join(ruta_recursos, "Studium.png"))
 frame_botones = tk.Frame(root)
 frame_botones.pack()
 
-boton_alumnos = tk.Button(frame_botones, text="Mostrar Alumnos", command=lambda: actualizar_coleccion_y_mostrar_identificadores('alumnos'))
+boton_alumnos = tk.Button(frame_botones, text="Mostrar Alumnos", command=lambda: actualizar_mostrar_identificadores('alumnos'))
 boton_alumnos.pack(side=tk.LEFT)
 
-boton_profesor = tk.Button(frame_botones, text="Mostrar Profesores", command=lambda: actualizar_coleccion_y_mostrar_identificadores('profesor'))
+boton_profesor = tk.Button(frame_botones, text="Mostrar Profesores", command=lambda: actualizar_mostrar_identificadores('profesor'))
 boton_profesor.pack(side=tk.LEFT)
 
 # Lista para mostrar identificadores con modo de selección SINGLE y centrado
