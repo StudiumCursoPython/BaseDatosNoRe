@@ -24,7 +24,7 @@ def actualizar_mostrar_identificadores(coleccion):
     mostrar_identificadores(coleccion)
 
 # Función para cargar los datos de un documento seleccionado en campos de entrada
-def cargar_datos_seleccionados(event):
+def cargar_datos_seleccionados():
     seleccionados = lista_identificadores.curselection()
     if not seleccionados:
         return
