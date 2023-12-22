@@ -1,6 +1,15 @@
-import tkinter as tk, os, sys
+""" 
+Curso Python empresa de 'Lenguaje de Programación Python'
+
+Autor: José Antonio Calvo López
+
+Fecha: Noviembre 2023
+
+"""
+
 from tkinter import messagebox, Entry, Listbox, PhotoImage, Label
 from firebase_admin import credentials, firestore, initialize_app
+import tkinter as tk, os, sys
 
 # Inicializar la aplicación Firebase con las credenciales
 cred = credentials.Certificate('alpine-charge-403816-508bb90d3f34.json')
