@@ -1,3 +1,12 @@
+""" 
+Curso Python empresa de 'Lenguaje de Programación Python'
+
+Autor: José Antonio Calvo López
+
+Fecha: Noviembre 2023
+
+"""
+
 from firebase_admin import credentials
 from firebase_admin import firestore
 import firebase_admin
